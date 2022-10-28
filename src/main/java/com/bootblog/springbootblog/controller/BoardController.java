@@ -21,8 +21,8 @@ public class BoardController {
 
     @GetMapping("/test")
     public String test(Model model) {
-        model.getAttribute("cnt", service.boardCount());
-        model.getAttribute("test", service.boardList());
+        model.addAttribute("cnt", service.boardCount());
+        model.addAttribute("test", service.boardList());
 
         return "/boards/hello";
     }
