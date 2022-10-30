@@ -18,4 +18,28 @@
             *
         FROM tbl_board where boardId=#{boardId};
     </select>
+
+    <insert id="uploadBoard" parameterType="com.bootblog.springbootblog.domain.Board">
+        INSERT INTO tbl_board (title, content, name)
+        VALUES
+        (#{title}, #{content}, #{name});
+    </insert>
+
+    <update id="updateBoard" parameterType="com.bootblog.springbootblog.domain.Board">
+        UPDATE tbl_board
+        SET title=#{title}, content=#{content}
+        WHERE boardId=#{boardId};
+    </update>
+
+    <delete id="deleteBoard" parameterType="Long">
+        DELETE
+        FROM tbl_board
+        WHERE boardId=#{boardId};
+    </delete>
+
+    <update id="viewCount">
+        UPDATE tbl_board
+        SET read = read + 1
+        WHERE boardId=#{boardId};
+    </update>
 </mapper>
