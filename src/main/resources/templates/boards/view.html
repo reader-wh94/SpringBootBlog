@@ -15,11 +15,10 @@
   <p>작성자 : [[${halo.name}]]</p>
   내용 :
   <div id="content">
-<textarea readonly="readonly"
-          class="form-control"
-          th:text="${halo.content}">
-
-</textarea>
+    <textarea readonly="readonly"
+              class="form-control"
+              th:text="${halo.content}">
+    </textarea>
 
   </div>
   <form th:action="@{update}" method="get">
